@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:ForgeBasePage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:FORGE.Base"
+    x:Class="FORGE.Pages.DashboardPage.DashboardPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25">
+
+            <Label Text="FORGE Dashboard"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+
+            <!-- Dashboard Buttons -->
+            <VerticalStackLayout Spacing="15">
+
+                <Button Text="Workout Generator" Clicked="GoToWorkout" />
+                <Button Text="Meal Plan" Clicked="GoToMealPlan" />
+                <Button Text="FORGE AI" Clicked="GoToChatbot" />
+                <Button Text="Water Tracker" Clicked="GoToWaterTracker" />
+                <Button Text="Calorie Tracker" Clicked="GoToCalorieTracker" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</base:ForgeBasePage>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    x:Class="FORGE.ForgeBasePage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="Black">
+
+    <Grid>
+        <!-- Background Logo -->
+        <Image Source="forge_bg.png"
+               Aspect="AspectFill"
+               Opacity="0.5"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"
+               ZIndex="0" />
+        <!--Floating Camera Button-->
+        <ImageButton Source="camera_icon.png"
+            x:Name="CameraButton"
+            BackgroundColor="Transparent"
+            WidthRequest="60"
+            HeightRequest="60"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="20"
+            Clicked="OnCameraClicked"
+            ZIndex="10"/>
+        <!--Page Content Area-->
+        <ContentView x:Name="ContentArea"
+                     ZIndex="1"
+                     Padding="20" />
+    </Grid>
+</ContentPage>

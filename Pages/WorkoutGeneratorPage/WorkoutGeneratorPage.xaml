@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:ForgeBasePage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:FORGE.Base"
+    x:Class="FORGE.Pages.WorkoutGeneratorPage.WorkoutGeneratorPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25">
+
+            <!-- Title -->
+            <Label Text="Workout Generator"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+
+            <!-- Duration Picker -->
+            <Label Text="Select Workout Duration"
+                   TextColor="White"
+                   FontSize="18" />
+            <Picker x:Name="DurationPicker"
+                    Title="Choose Duration"
+                    BackgroundColor="#1A1A1A"
+                    TextColor="White"
+                    TitleColor="Gray">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>20 Minutes</x:String>
+                        <x:String>45 Minutes</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Generate Workout Button -->
+            <Button Text="Generate Workout"
+                    Clicked="OnGenerateWorkoutClicked"
+                    BackgroundColor="#FF6B00"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="12"
+                    HeightRequest="50" />
+
+            <!-- Workout Result Display -->
+            <Frame BackgroundColor="#222"
+                   Padding="15"
+                   CornerRadius="12"
+                   HasShadow="True"
+                   IsVisible="False"
+                   x:Name="WorkoutResultFrame">
+                <Label x:Name="WorkoutResult"
+                       TextColor="White"
+                       FontSize="16" />
+            </Frame>
+        <ScrollView Orientation="Horizontal">
+            <HorizontalStackLayout Spacing="15">
+                <Frame WidthRequest="200" BackgroundColor="#FF6B00">
+                    <Label Text="Plank" TextColor="White"/>
+                </Frame>
+                <Frame WidthRequest="200" BackgroundColor="FF6B00">
+                    <Label Text="Jump Squat" TextColor="White"/>
+                </Frame>
+                <Frame WidthRequest="200" BackgroundColor="#FF6B00">
+                    <Label Text="Clean Press" TextColor="White" />
+                </Frame>
+        </HorizontalStackLayout>
+    </ScrollView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</base:ForgeBasePage>

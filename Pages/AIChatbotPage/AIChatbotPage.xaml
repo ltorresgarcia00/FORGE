@@ -1,0 +1,89 @@
+<base:ForgeBasePage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:FORGE.Base"
+    x:Class="FORGE.Pages.AIChatbotPage.AIChatbotPage">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />  <!-- Chat area -->
+            <RowDefinition Height="Auto" /> <!-- Input bar -->
+        </Grid.RowDefinitions>
+
+        <!-- Chat History Display -->
+        <CollectionView x:Name="ChatHistory"
+                        Grid.Row="0"
+                        ItemsSource="{Binding Messages}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="10"
+                           BackgroundColor="1E1E1E"
+                           CornerRadius="10"
+                           Paddin="10">
+                           <Label Text="{Binding}" TextColor="White"/>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Chat Input Area -->
+        <Grid Grid.Row="1"
+              Padding="10"
+              BackgroundColor="#1A1A1A"
+              ColumnSpacing="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!--Barcode Scanner-->
+            <ImageButton Source="barcode_icon.png"
+                         Clicked="OnBarcodeScanClicked"
+                         BackgroundColo="Transparent"
+                         WidthRequest="30"
+                         HeightRequest="30"
+                         Grid.Column="0"
+                         VerticalOptions="Center"/>
+            <!--Food Scanner-->
+            <ImageButton Source="camera_icon.png"
+                         Clicked="OnFoodScanClicked"
+                         BackgroundColor="Transparent"
+                         WidthRequest="30"
+                         HeightRequest="30"
+                         GridColumn="1"
+                         VerticalOptions="Center"/>
+            <!-- Text Input -->
+            <Entry x:Name="ChatInput"
+                   Placeholder="Ask Forge AI anything..."
+                   TextColor="White"
+                   BackgroundColor="#2A2A2A"
+                   PlaceholderColor="Gray"
+                   Grid.Column="0" />
+
+            <!-- Camera Icon beside chat -->
+            <ImageButton Source="camera_icon.png"
+                         Clicked="OnCameraIconClicked"
+                         BackgroundColor="Transparent"
+                         WidthRequest="30"
+                         HeightRequest="30"
+                         Grid.Column="1"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center" />
+
+            <!-- Send Button -->
+            <Button Text="Send"
+                    Clicked="OnSendClicked"
+                    BackgroundColor="#FF6B00"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Padding="10,5"
+                    Grid.Column="2" />
+        </Grid>
+
+    </Grid>
+
+</base:ForgeBasePage>

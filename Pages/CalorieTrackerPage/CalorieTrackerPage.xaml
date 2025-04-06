@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:ForgeBasePage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:FORGE.Base"
+    x:Class="FORGE.Pages.CalorieTrackerPage.CalorieTrackerPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25">
+
+            <Label Text="Calorie Tracker"
+                   FontSize="28"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Entry x:Name="CalorieEntry"
+                   Placeholder="Enter calories consumed"
+                   Keyboard="Numeric"
+                   TextColor="White"
+                   PlaceholderColor="Gray"
+                   BackgroundColor="#2A2A2A" />
+
+            <Button Text="Add Calories"
+                    Clicked="OnAddCalories"
+                    BackgroundColor="#FF6B00"
+                    TextColor="White"
+                    CornerRadius="12" />
+
+            <Label x:Name="TotalCaloriesLabel"
+                   Text="Total Today: 0 kcal"
+                   FontSize="20"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</base:ForgeBasePage>
